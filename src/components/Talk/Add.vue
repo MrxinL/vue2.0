@@ -21,16 +21,37 @@
 <script>
 export default {
     name: 'Add',
+    props: {
+      getChildData:{
+        type: Function,
+        required: true
+      }
+
+    },
     data(){
       return {
         input:'',
-         textarea: ''
+         textarea:''
       }
     },
     methods: {
         handclick : function() {
-          console.log(this.$data)
-            this.$emit('listenToChild', this.$data)
+          const input = this.input.trim();
+          const textarea = this.input.trim();
+          if(!input || !textarea){
+             alert('用户名和内容不能为空');
+             return;
+          }
+          const comment = {
+            input,
+            textarea
+          }
+          console.log(comment);
+          this.getChildData(comment);
+          this.input=''
+          this.textarea=''
+        //   console.log(this.$data)
+        //     this.$emit('listenToChild', this.$data)
         }
     }
 
