@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <div class="head"> 对react的评价</div>
+    <div class="head"> 对react的评价{{name}}</div>
     <Add class="use" :getChildData='getChildData'></Add>
     <List class="List" :comments='comments'></List>
   </div>
@@ -9,6 +9,7 @@
 <script>
 import Add from './components/Talk/Add.vue'
 import List from './components/Talk/List'
+import axios from 'axios';
 // import Item from './components/Talk/Item'
 
 export default {
@@ -32,7 +33,8 @@ export default {
           input: 'gailun ',
           textarea: 'vue so easy'
           },
-        ]
+        ],
+        name:''
     }
   },
   methods: {
@@ -45,6 +47,16 @@ export default {
         List,
         // Item,
     },
+    mounted() {
+      const url = 'https://api.imjad.cn/cloudmusic/?type=comments&id=32785674';
+        axios.get(url).then(response => {
+          this.name = response.data.userId;
+          console.log(this.name)
+          console.log(response);
+        }).catch(e => {
+          alert('shibail',e)
+        })
+    }
 }
 
 
