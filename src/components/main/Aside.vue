@@ -1,12 +1,12 @@
 <template>
 <div class="">
-      <el-aside width="200px" style="background-color: rgb(238, 241, 246)">
+      <el-aside class="elaside">
     <el-menu :default-openeds="['1', '3']">
       <el-submenu index="1">
-        <template slot="title"><i class="el-icon-message"></i>导航一</template>
+        <template slot="title"><i class="el-icon-message"></i>数据展示</template>
         <el-menu-item-group>
           <template slot="title">分组一</template>
-          <el-menu-item index="1-1">选项1</el-menu-item>
+          <el-menu-item index="1-1" @click="Service">信息查询</el-menu-item>
           <el-menu-item index="1-2">选项2</el-menu-item>
         </el-menu-item-group>
         <el-menu-item-group title="分组2">
@@ -54,10 +54,20 @@
 
 <script>
 export default {
-
+  
+  methods: {
+      Service() {
+        this.$router.push('/message')
+      }
+  }
 };
 </script>
 
 <style>
+.elaside{
+  margin-top: 20px;
+  width:200px;
+   background-color: rgb(238, 241, 246)
+}
 
 </style>

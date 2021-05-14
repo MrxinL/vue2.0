@@ -1,7 +1,8 @@
 <template>
 <div class="header">
-      <el-header style="text-align: right; font-size: 32px">
-         <img src="" alt="">
+   <!-- <img src="../../assets/herder.png" alt="" class="imgherder"> -->
+      <el-header  class="elheader">
+        
       <el-dropdown>
         <i class="el-icon-setting" style="margin-right: 15px"></i>
         <el-dropdown-menu slot="dropdown">
@@ -27,5 +28,10 @@ export default {
     background-color: aquamarine;
     height: 100px;
   }
+  .elheader{
+     text-align: right;
+     font-size: 32px;
+  }
+
 
 </style>

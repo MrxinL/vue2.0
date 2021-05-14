@@ -1,17 +1,17 @@
  <template>
-    <div>
+    <div class="layout">
       <el-container>
         <el-header>
                 <Header/>
 
         </el-header>
         <el-container>
-            <el-aside width="200px">
+            <el-aside>
 
                 <Aside />
             </el-aside>
 
-            <el-main>
+            <el-main class="elmain">
                  <router-view></router-view>
             </el-main>
         </el-container>
@@ -30,10 +30,16 @@ export default {
 </script>
 
 <style>
+.layout {
+    display: flex;
+}
     .el-main {
         padding-left: 0px;
+        margin-top: 20px;
     }
     .el-aside {
-        margin-top: 10px;
+        margin-top: 20px;
+        width: 200px
     }
+    
 </style>

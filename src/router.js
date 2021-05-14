@@ -16,6 +16,7 @@ export default new Router({
         path:'/login',
         component: Login
       },
+     
       {
         path:'/main',
         component: Main,
@@ -23,7 +24,11 @@ export default new Router({
           {
             path:'',
             component:() => import('./views/main/home.vue')
-          }
+          },
+          {
+            path:'/message',
+            component:() => import('./views/message/index.vue')
+          },
         ]
       }
     ]
