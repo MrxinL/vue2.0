@@ -1,10 +1,17 @@
 <template>
-<div class="home"></div>
+<div class="home">
+      <Card />
+</div>
+
 </template>
 
 <script>
-export default {
+import Card from '../../components/card/index'
 
+export default {
+    components: {
+      Card
+    }
 };
 </script>
 

@@ -1,7 +1,7 @@
 <template>
 <div class="header">
-      <el-header style="text-align: right; font-size: 12px">
-        
+      <el-header style="text-align: right; font-size: 32px">
+         <img src="" alt="">
       <el-dropdown>
         <i class="el-icon-setting" style="margin-right: 15px"></i>
         <el-dropdown-menu slot="dropdown">
